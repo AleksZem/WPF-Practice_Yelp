@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CptS451_Milestone2"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit" x:Name="CheckinWindow" x:Class="CptS451_Milestone2.CheckinsChartPerWeek"
+        mc:Ignorable="d"
+        Title="CheckinsChartPerWeek" Height="366.964" Width="369.643">
+    <Grid Background="LightSlateGray">
+        <GroupBox x:Name="CheckinsGroupBox" Header="" Margin="0,10,0,0">
+            <chartingToolkit:Chart x:Name="Chart1" Margin="4,7,-2,-2" Title="Number of Checkins Per Day">
+                <chartingToolkit:Chart.LegendStyle>
+                    <Style TargetType="Control">
+                        <Setter Property="Width" Value="0" />
+                        <Setter Property="Height" Value="0" />
+                    </Style>
+                </chartingToolkit:Chart.LegendStyle>
+                <chartingToolkit:ColumnSeries x:Name="CheckinsData" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource ="{Binding}" Title ="#of Checkins" Margin="0,0,-27,0" />
+            </chartingToolkit:Chart>
+        </GroupBox>
+    </Grid>
+</Window>
